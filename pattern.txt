@@ -1,0 +1,216 @@
+(i)
+ #include <iostream>
+using namespace std;
+int main() {
+    int n=5;
+    for (int i = 1; i <= n; i++) {
+        for (int j = 1; j <= n - i; j++) {
+            cout << " ";
+        }
+        for (int k = 1; k <= 2 * i - 1; k++) {
+            cout << "*";
+        }
+        cout << endl;
+    }
+    return 0;
+}
+	EXPECTED OUTPUT	MY OUTPUT
+	        * 
+      *** 
+    ***** 
+  ******* 
+********* 	        * 
+      *** 
+    ***** 
+  ******* 
+*********
+
+(ii)
+#include <iostream>
+using namespace std;
+
+int main() {
+    int n = 5;
+    for (int i = 0; i < n; i++) {
+        for (int j = 0; j <= i; j++) {
+            cout << "*";
+        }
+        cout << endl;
+    }
+    return 0;
+}
+	EXPECTED OUTPUT	MY OUTPUT
+	 *
+**
+***
+****
+*****	*
+**
+***
+****
+*****
+
+(iii)
+#include <iostream>
+using namespace std;
+int main()
+{
+    int n = 5;
+    for (int i = 1; i <= n; i++)
+    {
+        for (int j = 1; j <= n - i; j++)
+        {
+            cout << " ";
+        }
+        for (int k = 1; k <= i; k++)
+        {
+            cout << "*";
+        }
+        cout << endl;
+    }
+    return 0;
+}
+	EXPECTED OUTPUT	MY OUTPUT
+	 *
+**
+***
+****
+*****	*
+**
+***
+****
+                                    *****
+
+(iv)
+#include <iostream>
+using namespace std;
+int main() {
+    int n = 4;
+    for (int i = 1; i <= n; i++) {
+        for (int j = 1; j <= n-i; j++) {
+            cout << " ";
+        }
+        for (int k = 1; k <= 2*i-1; k++) {
+            cout << "*";
+        }
+        cout << endl;
+    }
+    for (int i = n-1; i >= 1; i--) {
+        for (int j = 1; j <= n-i; j++) {
+            cout << " ";
+        }
+        for (int k = 1; k <= 2*i-1; k++) {
+            cout << "*";
+        }
+        cout << endl;
+    }
+    return 0;
+}
+	EXPECTED OUTPUT	MY OUTPUT
+	   *
+  ***
+ *****
+*******
+ *****
+  ***
+   *	   *
+  ***
+ *****
+*******
+ *****
+  ***
+   *
+
+(v)
+#include <iostream>
+using namespace std;
+int main()
+{
+    int n=6;
+    for (int i = 1; i <= n; i++)
+    {
+        for (int j = 1; j <= n - i; j++)
+        {
+            cout << " ";
+        }
+        for (int j = 1; j <= i; j++)
+        {
+            cout << j;
+        }
+        for (int j = i - 1; j >= 1; j--)
+        {
+            cout << j;
+        }
+        cout << endl;
+    }
+    return 0;
+}
+	EXPECTED OUTPUT	MY OUTPUT
+	     1
+    121
+   12321
+  1234321
+ 123454321
+12345654321	     1
+    121
+   12321
+  1234321
+ 123454321
+12345654321
+
+(vi)
+#include <iostream>
+using namespace std;
+int main(){
+    int row;
+	cout<<"Enter number or rows : ";
+	cin>>row;
+	char a='A';
+	for(int i=0; i<row; i++){
+		char b=a;
+		if(i==0){
+			for(int j=1; j<=2*row-1; j++){
+				cout<<b++;
+				if(b=='['){
+					b=a;
+				}
+			}
+		}else{
+			for(int j=1; j<=row-i; j++){
+				cout<<b++;
+				if(b=='['){
+					b=a;
+				}
+			}
+			for(int k=1; k<=2*i-1; k++){
+				cout<<" ";
+				b++;
+				if(b=='['){
+					b=a;
+				}
+			}
+			for(int l=1; l<=row-i; l++){
+				cout<<b++;
+				if(b=='['){
+					b=a;
+				}
+			}
+		}
+		cout<<endl;
+	}
+    return 0;
+}
+
+
+	EXPECTED OUTPUT	MY OUTPUT
+	
+ABCDEFGHI
+ABCD FGHI
+ABC   GHI
+AB             HI
+A                   I	
+ABCDEFGHI
+ABCD  FGHI
+ABC       GHI
+AB             HI
+A                   I
